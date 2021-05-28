@@ -1,8 +1,8 @@
 library(shiny)
 library(tidyverse)
-dat = read.csv('final_data.csv')
+dat = read.csv('data/final_data.csv')
 dat = dat %>% group_by(singer, title) %>% filter(n()>=4) %>% ungroup
-sdata = read.csv('shiny_data.csv')
+sdata = read.csv('data/shiny_data.csv')
 ui <- fluidPage(
   tags$head(HTML("<title>클러스터 별 음원 주간 차트</title> <link rel='icon' type='image/gif/png' href='favicon.png'>")),
   titlePanel(div(img(height=64, width=64, src="favicon.png"),
